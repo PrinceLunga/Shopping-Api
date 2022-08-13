@@ -1,0 +1,59 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using ShoppingApi.Database;
+using ShoppingApi.Mappings_Setup;
+using AutoMapper;
+using ShoppingApi.Services.Interface;
+using ShoppingApi.Services.Implementation;
+
+namespace ShoppingApi
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+            services.AddDbContext<ShoppingDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("ShoppingCartDBConnection"),
+                    x => x.MigrationsAssembly("ShoppingApi")));
+            services.AddAutoMapper(typeof(MappingSetup));
+            services.AddScoped<IProductService, ProductService>();
+            services.AddSwaggerGen();
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", " v1"));
+        }
+    }
+}
