@@ -5,10 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ShoppingApi.Database;
-using ShoppingApi.Mappings_Setup;
-using AutoMapper;
-using ShoppingApi.Services.Interface;
 using ShoppingApi.Services.Implementation;
+using ShoppingApi.Services.Interface;
 
 namespace ShoppingApi
 {
@@ -28,7 +26,6 @@ namespace ShoppingApi
             services.AddDbContext<ShoppingDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ShoppingCartDBConnection"),
                     x => x.MigrationsAssembly("ShoppingApi")));
-            services.AddAutoMapper(typeof(MappingSetup));
             services.AddScoped<IProductService, ProductService>();
             services.AddSwaggerGen();
         }
@@ -53,7 +50,7 @@ namespace ShoppingApi
             });
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", " v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shopping Api v1"));
         }
     }
 }

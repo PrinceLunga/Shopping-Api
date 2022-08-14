@@ -12,6 +12,6 @@ namespace ShoppingApi.Services.Interface
         List<ProductModel> GetProducts();
         ProductModel GetProductById(int Id);
         string DeleteProduct(int Id);
-        ProductModel UpdateProduct(int Id);
+        ProductModel UpdateProduct(ProductModel model);
     }
 }
