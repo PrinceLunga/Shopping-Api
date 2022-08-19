@@ -6,7 +6,6 @@ using ShoppingApi.Services.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ShoppingApi.Services.Implementation
 {
@@ -25,20 +24,39 @@ namespace ShoppingApi.Services.Implementation
             using (shoppingDbContext)
             {
                 var product = mapper.Map<ProductModel, Product> (model);
+
                 shoppingDbContext.Products.Add(product);
                 shoppingDbContext.SaveChanges();
+
                 return "Product successfully added !";
             }
         }
 
         public string DeleteProduct(int Id)
         {
-            throw new NotImplementedException();
+            using (shoppingDbContext)
+            {
+                var GetProduct = shoppingDbContext.Products.Where(x => x.Id == Id).Single();
+
+                var GetProductModel = mapper.Map<Product, ProductModel>(GetProduct);
+
+                shoppingDbContext.Products.Remove(GetProduct);
+                shoppingDbContext.SaveChanges();
+
+                return "Product successfully deleted !";
+            }
         }
 
         public ProductModel GetProductById(int Id)
         {
-            throw new NotImplementedException();
+            using (shoppingDbContext)
+            {
+                var GetProduct = shoppingDbContext.Products.Where( x => x.Id == Id).Single();
+
+                var GetProductModel = mapper.Map<Product, ProductModel>(GetProduct);
+
+                return GetProductModel;
+            }
         }
 
         public List<ProductModel> GetProducts()
