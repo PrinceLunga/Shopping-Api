@@ -21,7 +21,8 @@ namespace ShoppingApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddProduct(ProductModel model)
+        [AcceptVerbs("POST")]
+        public ActionResult AddProduct([FromForm] ProductModel model)
         {
             if (model != null)
             {

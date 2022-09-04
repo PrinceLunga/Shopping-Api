@@ -76,24 +76,21 @@ namespace ShoppingApi.Services.Implementation
         {
             try
             {
-                using (shoppingDbContext)
+                var Product = shoppingDbContext.Products.Where(p => p.Id == Id).Select(x => new ProductModel
                 {
-                    var Product = shoppingDbContext.Products.Where(p => p.Id == Id).Select(x => new ProductModel
-                    {
-                        Id = x.Id,
-                        Brand = x.Brand,
-                        Category = x.Category,
-                        Description = x.Description,
-                        Images = x.Images,
-                        IsInStock = x.IsInStock,
-                        Name = x.Name,
-                        Price = x.Price,
-                        Quantity = x.Quantity,
-                        Size = x.Size
-                    }).SingleOrDefault();
+                    Id = x.Id,
+                    Brand = x.Brand,
+                    Category = x.Category,
+                    Description = x.Description,
+                    Images = x.Images,
+                    IsInStock = x.IsInStock,
+                    Name = x.Name,
+                    Price = x.Price,
+                    Quantity = x.Quantity,
+                    Size = x.Size
+                }).SingleOrDefault();
 
-                    return Product;
-                }
+                return Product;
             }
             catch (System.Exception ex)
             {
@@ -134,25 +131,22 @@ namespace ShoppingApi.Services.Implementation
         {
             try
             {
-                using (shoppingDbContext)
-                {
-                    var Product = shoppingDbContext.Products.Find(model.Id);
+                var Product = shoppingDbContext.Products.Find(model.Id);
 
-                    Product.Images = model.Images;
-                    Product.Name = model.Name;
-                    Product.Price = model.Price;
-                    Product.Quantity = model.Quantity;
-                    Product.Size = model.Size;
-                    Product.Brand = model.Brand;
-                    Product.Category = model.Category;
-                    Product.Description = model.Description;
-                    Product.IsInStock = model.IsInStock;
+                Product.Images = model.Images;
+                Product.Name = model.Name;
+                Product.Price = model.Price;
+                Product.Quantity = model.Quantity;
+                Product.Size = model.Size;
+                Product.Brand = model.Brand;
+                Product.Category = model.Category;
+                Product.Description = model.Description;
+                Product.IsInStock = model.IsInStock;
 
-                    shoppingDbContext.Products.Update(Product);
-                    shoppingDbContext.SaveChanges();
+                shoppingDbContext.Products.Update(Product);
+                shoppingDbContext.SaveChanges();
 
-                    return model;
-                }
+                return model;
             }
             catch (System.Exception ex)
             {

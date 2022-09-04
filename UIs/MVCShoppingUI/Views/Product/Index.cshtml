@@ -1,0 +1,126 @@
+﻿@model IEnumerable<MVCShoppingUI.Models.ProductsModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ShoppingLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="AddProduct">Create New</a>
+</p>
+
+<div class="ourproduct">
+    <div class="container">
+        <div class="row product_style_3">
+            @foreach (var item in Model)
+            {
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="card nestable-cart">
+                        <div class="card-title">
+                            <h4>@item.Name</h4>
+                            <div class="row">
+                                <ul>
+                                    <img src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Images))" alt="#" style="width: 150px; height: 150px;"  />
+                                </ul>
+                            </div>
+                            <div class="product_detail text_align_center">
+                                <p class="product_price">R @item.Price</p>
+                                <p class="product_descr">@item.Name</p>
+                                <p class="product_descr">@item.Brand</p>
+                                <p class="product_descr">@item.Description</p>
+                                <p class="product_descr"><strong>@item.Quantity</strong></p> In Stock
+                                <hr />
+
+                                <button href="@Url.Action("AddItemToCart","Cart",new {})" type="submit" class="bt_main">Add to cart</button>
+                                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Size)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsInStock)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Size)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsInStock)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <img src="data:image/jpeg;base64,@(Convert.ToBase64String(item.Images))" alt="#" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@

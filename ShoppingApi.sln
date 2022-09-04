@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingApi", "ShoppingApi\ShoppingApi.csproj", "{43B2EC18-FEC0-4AF2-8718-0A94ECBE1BFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingApi", "ShoppingApi\ShoppingApi.csproj", "{43B2EC18-FEC0-4AF2-8718-0A94ECBE1BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCShoppingUI", "UIs\MVCShoppingUI\MVCShoppingUI.csproj", "{2683DDBF-7E0B-4AE0-8E1E-F337A9738348}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{43B2EC18-FEC0-4AF2-8718-0A94ECBE1BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43B2EC18-FEC0-4AF2-8718-0A94ECBE1BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43B2EC18-FEC0-4AF2-8718-0A94ECBE1BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2683DDBF-7E0B-4AE0-8E1E-F337A9738348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2683DDBF-7E0B-4AE0-8E1E-F337A9738348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2683DDBF-7E0B-4AE0-8E1E-F337A9738348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2683DDBF-7E0B-4AE0-8E1E-F337A9738348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
