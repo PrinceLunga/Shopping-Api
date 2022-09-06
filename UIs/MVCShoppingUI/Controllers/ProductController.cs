@@ -20,6 +20,8 @@ namespace MVCShoppingUI.Controllers
             var ProductList = new List<ProductsModel>();
             using var httpClient = new HttpClient();
 
+            ViewBag.CartItems = "1";
+
             try
             {
                 using var response = await httpClient.GetAsync(Url);

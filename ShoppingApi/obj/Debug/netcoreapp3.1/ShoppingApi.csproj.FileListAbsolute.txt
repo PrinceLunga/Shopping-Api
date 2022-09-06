@@ -47,7 +47,6 @@ D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\obj\Debug\netcore
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\obj\Debug\netcoreapp3.1\ShoppingApi.dll
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\obj\Debug\netcoreapp3.1\ShoppingApi.pdb
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\obj\Debug\netcoreapp3.1\ShoppingApi.genruntimeconfig.cache
-D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\obj\Debug\netcoreapp3.1\ShoppingApi.csprojAssemblyReference.cache
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -138,3 +137,7 @@ D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcore
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\obj\Debug\netcoreapp3.1\ShoppingApi.csprojAssemblyReference.cache
+D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Desktop 2\Desktop\Youtube tutorials\ShoppingApi\ShoppingApi\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
